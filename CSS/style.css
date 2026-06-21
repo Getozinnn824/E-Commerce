@@ -1,0 +1,563 @@
+@font-face {
+   font-family: 'Trajan';
+   src: url('../assets/trajan.ttf');
+}
+@font-face {
+   font-family: 'Perpetua';
+   src: url('../assets/perpetua.ttf');
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --background:#050608;
+    --panel:#0c1015;
+    --panel-light:#141a22;
+
+    --border:#2e3947;
+
+    --text:#cfd5dd;
+    --title:#ffffff;
+    --subtitle: #cfd5dd;
+
+    --glow:#8fa3c4;
+}
+body{
+   color: var(--text);
+   font-family: 'Perpetua';
+   background-image: url(https://images.squarespace-cdn.com/content/v1/606d4deb4db8c15ea53b3624/1619052791039-U5P66XF1HX6OHSPMRHP0/banner_real.jpg);
+   background-size: cover ;
+   background-attachment: fixed;
+   background-repeat: no-repeat;
+   background-position: center;
+   min-height: 100vh;
+   flex-direction: column;
+   display: flex;
+}
+.back{
+   color: var(--text);
+   font-family: 'Perpetua';
+   background-image: url(https://static.wikia.nocookie.net/hollowknight/images/2/2d/Screenshot_HK_Salubra_01.png/revision/latest/scale-to-width-down/1000?cb=20230719143349&path-prefix=pt);
+   background-size: cover ;
+   background-attachment: fixed;
+   background-repeat: no-repeat;
+   background-position: center;
+}
+
+.fog{
+    position:fixed;
+    inset:0;
+
+    background:
+    radial-gradient(circle at 50% 20%,rgba(143,163,196,.06),);
+
+    pointer-events:none;
+}
+
+aside{
+    position:fixed;
+
+    left:0;
+    top:0;
+
+    width:270px;
+    height:100vh;
+
+    background:rgba(12,16,21,.95);
+
+    border-right:1px solid var(--border);
+
+    display:flex;
+    flex-direction:column;
+
+    backdrop-filter:blur(10px);
+}
+
+.logo{
+    text-align:center;
+
+    padding:40px 20px;
+
+    border-bottom:1px solid var(--border);
+}
+
+.logo-icon{
+    width:90px;
+    height:90px;
+
+    object-fit:contain;
+
+    margin:0 auto 15px auto;
+
+    filter:
+        drop-shadow(0 0 10px rgba(255,255,255,.15))
+        drop-shadow(0 0 20px rgba(143,163,196,.15));
+
+    transition:.3s;
+}
+
+.logo-icon:hover{
+    transform:scale(1.05);
+}
+
+.logo h1{
+    color:var(--title);
+
+    font-family:'Cinzel', serif;
+
+    font-size:1.6rem;
+
+    letter-spacing:2px;
+}
+
+.logo p{
+    margin-top:10px;
+
+    opacity:.7;
+}
+
+aside nav{
+   display:flex;
+   flex-direction:column;
+   padding:25px;
+}
+
+aside nav a{
+   color:var(--text);
+   text-decoration:none;
+   padding:15px;
+   margin-bottom:8px;
+   border:1px solid transparent;
+   transition:.3s;
+}
+
+aside nav a:hover{
+   border-color:var(--border);
+   background:var(--panel-light);
+   box-shadow:0 0 15px rgba(143,163,196,.15);
+   
+}
+
+.account-buttons{
+    margin-top:auto;
+
+    padding:25px;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:10px;
+}
+
+.btn{
+    text-align:center;
+
+    text-decoration:none;
+
+    color:var(--text);
+
+    border:1px solid var(--border);
+
+    padding:12px;
+
+    transition:.3s;
+}
+
+.btn:hover{
+   background:var(--panel-light);
+   box-shadow:
+   0 0 15px rgba(143,163,196,.2);
+   transform: scale(1.06);
+}
+.btn-login{
+   text-align:center;
+   text-decoration:none;
+   color:var(--background);
+   border:1px solid var(--border);
+   padding:12px;
+   transition:.3s;
+   background: #cfd5dd;
+}
+
+.btn-login:hover{
+   background:var(--panel-light); 
+   box-shadow:0 0 15px rgba(143,163,196,.2);
+   color: var(--text);
+   transform: scale(1.06);
+}
+
+.content{
+    margin-left:270px;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+
+header{
+    padding:25px 40px;
+    border-bottom:1px solid var(--border);
+    background:rgba(0, 0, 0, .4);
+}
+
+header nav{
+    display:flex;
+    gap:30px;
+}
+
+header nav a{
+    color:var(--text);
+
+    text-decoration:none;
+
+    transition:.3s;
+}
+
+header nav a:hover{
+    color:white;
+}
+
+main{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:50px;
+}
+
+.hero{
+   max-width:800px;
+   background:rgba(0, 0, 0, 0.7);
+   border-radius: 10px;
+   text-align:center;
+   backdrop-filter: blur(9px);
+   box-shadow: 0 0 30px 20px rgba(0, 0, 0, .4);
+   flex-direction: column;
+   gap:20px;
+}
+
+.line{
+   width: 550px;
+   margin:-20px 0;
+   align-items: center;
+   max-width: 100%;
+   position: relative;
+   top: -15px;
+}
+.line-bottom{
+   width: 500px;
+   margin:10px 0;
+   align-items: center;
+   max-width: 100%;
+   position: relative;
+   top: 20px;
+}
+
+.hero h2{
+    font-family:'Trajan';
+    font-size:4rem;
+    color:white;
+    letter-spacing:4px;
+}
+
+.hero p{
+    margin-top:20px;
+
+    font-size:1.4rem;
+
+    line-height:1.8;
+}
+
+.hero button{
+    margin-top:30px;
+
+    padding:15px 35px;
+
+    background:none;
+
+    color:white;
+
+    border:1px solid var(--border);
+
+    cursor:pointer;
+
+    font-family:'Perpetua', serif;
+
+    transition:.3s;
+}
+
+.hero button:hover{
+    background:var(--panel-light);
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 0 20px rgba(143,163,196,.2);
+}
+
+footer{
+    border-top:1px solid var(--border);
+    text-align:center;
+    padding:20px;
+    background: rgba(0, 0, 0, 0.5);
+    position: relative;
+    bottom:-120px;
+}
+.title {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 40px;
+    letter-spacing: 2px;
+}
+
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    padding: 50px;
+}
+
+
+.product-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: 0.4s ease;
+    backdrop-filter: blur(5px);
+}
+
+
+.product-card:hover {
+    transform: translateY(-10px) scale(1.06);
+    border-color: white;
+}
+
+.img-mask {
+   width: 100px;
+   object-fit: cover;
+   margin-bottom: 10px;
+}
+
+.product-card h2 {
+    margin: 10px 0 5px;
+}
+.product-card p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+.product-card span {
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+    color: #fff;
+}
+.product-card button {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.geo{
+   width: 20px;
+   position: relative;
+   top: 34px;
+   left: -25px;
+}
+.slot{
+   width: 20px;
+   position: relative;
+   top: 33px;
+   left: -28px;
+}
+.slo{
+   position: relative;
+   align-items: end;
+}
+
+.about-page {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+.lore-box {
+    max-width: 900px;
+    padding: 40px 60px;
+
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(3px);
+
+    border-top: 1px solid rgba(255,255,255,0.3);
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+
+    color: #d6d6d6;
+
+    text-align: center;
+}
+
+.lore-box h1 {
+    font-size: 3rem;
+    margin-bottom: 40px;
+    letter-spacing: 3px;
+}
+
+.lore-box h2 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.lore-box p {
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.lore-box blockquote {
+    margin: 30px 0;
+    padding: 20px;
+
+    font-style: italic;
+
+    border-left: 3px solid rgba(255,255,255,0.4);
+    border-right: 3px solid rgba(255,255,255,0.4);
+
+    background: rgba(255,255,255,0.03);
+}
+
+.signature {
+    text-align: right;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.contact-page {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    margin-top: 30px;
+}
+
+.contact-form label {
+    text-align: left;
+    font-size: 1.1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.15);
+
+    color: #d6d6d6;
+
+    padding: 12px;
+    font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: rgba(255,255,255,0.5);
+}
+
+.contact-form button {
+    margin-top: 15px;
+
+    background: transparent;
+    color: #d6d6d6;
+
+    border: 1px solid rgba(255,255,255,0.3);
+
+    padding: 12px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.6);
+}
+
+.merchant-note {
+    margin-top: 50px;
+}
+
+.merchant-note h2 {
+    margin-bottom: 20px;
+}
+
+.signature {
+    text-align: right;
+    font-style: italic;
+    opacity: 0.8;
+}
+.register-page {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    margin-top: 30px;
+}
+
+.register-form label {
+    text-align: left;
+    font-size: 1.1rem;
+}
+
+.register-form input,
+.register-form textarea {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.15);
+
+    color: #d6d6d6;
+
+    padding: 12px;
+    font-size: 1rem;
+}
+
+.register-form input:focus,
+.register-form textarea:focus {
+    outline: none;
+    border-color: rgba(255,255,255,0.5);
+}
+
+.register-form button {
+    margin-top: 15px;
+
+    background: transparent;
+    color: #d6d6d6;
+
+    border: 1px solid rgba(255,255,255,0.3);
+
+    padding: 12px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.register-form button:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.6);
+}
